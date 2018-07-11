@@ -29,12 +29,12 @@ class Pokemon extends Component {
     return (
       <div className="Pokemon">
         <p>{this.state.pokemon.name}</p>
-        {/* {this.state.pokemon.sprites && 
+        {this.state.pokemon.sprites && 
         <img
           src={ this.state.pokemon.sprites.front_default }
           alt={this.state.pokemon.name}
         />
-        } */}
+        }
       </div>
     )
   }
