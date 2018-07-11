@@ -6,32 +6,35 @@ class Pokemon extends Component {
     super(props)
 
     this.state = {
-      user: {}
+      pokemon: {}
     }
 
-    this.fetchUserData()
+    this.fetchpokemonData()
   }
 
   componentDidUpdate(prevProps) {
-    if (prevProps.match.params.pokeNum !== this.props.match.params.pokeNum) {
-      this.fetchUserData()
+    if (prevProps.match.params.pokemon !== this.props.match.params.pokemon) {
+      this.fetchpokemonData()
     }
   }
 
-  fetchUserData = () => {
-    const { pokeNum } = this.props.match.params
-    fetch(`http://pokeapi.co/api/v2/pokemon/${pokeNum}`)
+  fetchpokemonData = () => {
+    const { pokemon } = this.props.match.params
+    fetch(`http://pokeapi.co/api/v2/pokemon/${pokemon}/`)
       .then(response => response.json())
-      .then(user => this.setState({ user }))
+      .then(pokemon => this.setState({ pokemon }))
   }
 
   render() {
     return (
       <div className="Pokemon">
+        <p>{this.state.pokemon.name}</p>
+        {/* {this.state.pokemon.sprites && 
         <img
-          src={ this.state.user.avatar_url }
-          alt={this.state.user.login}
+          src={ this.state.pokemon.sprites.front_default }
+          alt={this.state.pokemon.name}
         />
+        } */}
       </div>
     )
   }

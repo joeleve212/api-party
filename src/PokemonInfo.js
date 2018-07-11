@@ -6,16 +6,16 @@ import Pokemon from './Pokemon'
 
 class PokemonInfo extends Component {
   state = {
-    pokeNum: '',
+    pokemon: '',
   }
 
   handleChange = ev => {
-    this.setState({ pokeNum: ev.target.value })
+    this.setState({ pokemon: ev.target.value })
   }
 
   handleSubmit = ev => {
     ev.preventDefault()
-    this.props.history.push(`/PokemonInfo/${this.state.pokeNum}`)
+    this.props.history.push(`/pokemon/${this.state.pokemon}`)
   }
 
   render() {
@@ -29,7 +29,7 @@ class PokemonInfo extends Component {
               autoFocus
               placeholder="Type Pokemon Number"
               type="text"
-              value={this.state.pokeNum}
+              value={this.state.pokemon}
               onChange={this.handleChange}
             />
           </div>
@@ -41,7 +41,7 @@ class PokemonInfo extends Component {
         </form>
 
         <Route
-          path="/PokemonInfo/:pokeNum"
+          path="/pokemon/:pokemon"
           component={Pokemon}
         />
       </div>
