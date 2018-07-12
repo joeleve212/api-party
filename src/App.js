@@ -22,13 +22,13 @@ class App extends Component {
             <NavLink to="/homework">Homework</NavLink>
           </li>
           <li>
-            <NavLink to="/PokemonInfo">Pokemon API</NavLink>
+            <NavLink to="/pokemon">Pokemon API</NavLink>
           </li>
         </ul>
         <Switch>
           <Route path="/github" component={Github} />
           <Route path="/homework" component={Homework} />
-          <Route path="/pokemonInfo" component={PokemonInfo} />
+          <Route path="/pokemon" component={PokemonInfo} />
           <Route render={() => (
               <p>To get started, click one of the links above.</p>
           )} />

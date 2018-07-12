@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Github from './Github';
+//import Github from './Github';
 
 class GithubUser extends Component {
   constructor(props) {

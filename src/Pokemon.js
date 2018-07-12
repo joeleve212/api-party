@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import PokemonInfo from './PokemonInfo';
+//import PokemonInfo from './PokemonInfo';
 
 class Pokemon extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      pokemon: {}
+      pokemon: {},
+      error: null
     }
 
     this.fetchpokemonData()
@@ -20,7 +21,7 @@ class Pokemon extends Component {
 
   fetchpokemonData = () => {
     const { pokemon } = this.props.match.params
-    fetch(`http://pokeapi.co/api/v2/pokemon/${pokemon}/`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}/`)
       .then(response => response.json())
       .then(pokemon => this.setState({ pokemon }))
   }
@@ -29,11 +30,11 @@ class Pokemon extends Component {
     return (
       <div className="Pokemon">
         <p>{this.state.pokemon.name}</p>
-        {this.state.pokemon.sprites && 
+        {this.state.pokemon.sprites && (
         <img
           src={ this.state.pokemon.sprites.front_default }
           alt={this.state.pokemon.name}
-        />
+        />)
         }
       </div>
     )

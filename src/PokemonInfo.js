@@ -27,7 +27,7 @@ class PokemonInfo extends Component {
             <input
               required
               autoFocus
-              placeholder="Type Pokemon Number"
+              placeholder="Type Pokemon Name or Number"
               type="text"
               value={this.state.pokemon}
               onChange={this.handleChange}
