@@ -6,8 +6,7 @@ const Homework = () => {
   return (
     <div className="Homework">
       <h2>And now... <em>your</em> turn!</h2>
-      <p>You've seen an example of how to Route to new pages and fetch data from an API.</p>
-      <p>Your assignment, should you choose to accept it (and you should), is to add some more routes to the API Party and fetch data from your favorite APIs. The API you choose is up to you, but be sure to get some data and try to display it in a visually-pleasing way.</p>
+      
       <p>In case you don't have a favorite API, here are some suggestions:</p>
 
       <ul>

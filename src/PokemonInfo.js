@@ -5,8 +5,13 @@ import { Route } from 'react-router-dom'
 import Pokemon from './Pokemon'
 
 class PokemonInfo extends Component {
-  state = {
-    pokemon: '',
+  
+  constructor(){
+    super()
+    this.currentNum = 2
+    this.state = {
+      pokemon: '',
+    }
   }
 
   handleChange = ev => {
@@ -15,6 +20,12 @@ class PokemonInfo extends Component {
 
   handleSubmit = ev => {
     ev.preventDefault()
+    this.currentNum = this.state.pokemon
+    this.props.history.push(`/pokemon/${this.state.pokemon}`)
+  }
+  
+  moveUp = ev =>{
+    this.setState({ pokemon: this.currentNum })
     this.props.history.push(`/pokemon/${this.state.pokemon}`)
   }
 
@@ -36,6 +47,9 @@ class PokemonInfo extends Component {
           <div>
             <button type="submit">
               Look up Pokemon
+            </button>
+            <button onClick={this.moveUp}>
+              Next Pokemon
             </button>
           </div>
         </form>

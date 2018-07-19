@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import PokemonInfo from './PokemonInfo';
 
 class Pokemon extends Component {
   constructor(props) {
@@ -7,7 +6,7 @@ class Pokemon extends Component {
 
     this.state = {
       pokemon: {},
-      error: null
+      //error: null
     }
 
     this.fetchpokemonData()
